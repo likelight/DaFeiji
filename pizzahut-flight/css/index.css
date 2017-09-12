@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* for ios flickers when tapped
+       reference: http://stackoverflow.com/questions/9526719/ipad-canvas-flickers-when-tapped
+    */
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+canvas {
+    /*background: #ff9588;*/
+}
+
+body {
+    overflow: hidden;
+}
+
+.percent {
+    text-align: center;
+    font-size: 21px;
+    color: #fff;
+    width: 100%;
+}
+
+
+.common-bg {
+    width: 100%;
+}
+.long-bg {
+    width: 100%;
+}
+.fit-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.win-food {
+    width: 66%;
+    margin-left: 17%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.win-btn, .lose-btn {
+    position: absolute;
+}
+.page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    /*overflow: scroll;*/
+
+}
+.loading-page,
+.mashangkaida-page,
+.pre-game-page,
+.game-page
+ {
+    overflow: hidden;
+}
+.pa {
+    position: absolute;
+}
+
+.progress-bar img {
+    width: 100%;
+
+}
+
+.progress-bar {
+    width: 0%;
+    overflow: hidden;
+}
+
+.pre-game-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.mashangkaida-bottom {
+    position: absolute;
+    bottom: 12px;
+    width: 44%;
+    left: 27.7%;
+}
+img {
+    display: block;
+}

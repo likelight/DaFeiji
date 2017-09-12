@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>去拼吧，榴莲</title>
+    <meta charset="UTF-8" name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <link rel="stylesheet" href="css/index.css"/>
+
+
+    <script src="js/jquery.js"></script>
+    <!--<script src='./js/wgate.js'></script>-->
+    <script src="./js/PHDI_2016_LiuLian.js"></script>
+<!--<script type='text/javascript'>-->
+<!--//<![CDATA[-->
+<!--//Miaozhen Base Code Start-->
+  <!--_mzh=window._mzh || []; _mzt=window._mzt || []; _mz_dp=window._mz_dp || [];-->
+  <!--(function (doc) {-->
+    <!--var t=parseInt((new Date()).getTime()/1000);-->
+    <!--var v=t-t%300;-->
+    <!--var js=doc.createElement("script"),-->
+        <!--fs=doc.getElementsByTagName("script")[0];-->
+    <!--js.src="http://js.miaozhen.com/t.js?v="+v;-->
+    <!--fs.parentNode.insertBefore(js, fs);-->
+  <!--})(document);-->
+  <!--function _mz_evt(ae,n) {_mzh.push(['evt._set_ae', ae], ['evt._set_n', n], ['evt._send']);}-->
+  <!--function _mz_imp(k,p) {_mzh.push(['imp._set_k', k], ['imp._set_p', p],['imp._send']);}-->
+  <!--function _mz_clk(k,p) {_mzh.push(['clk._set_k', k], ['clk._set_p', p],['clk._send']);}-->
+  <!--function _mz_mevt(ae,n) {_mzh.push(['mevt._set_ae', ae], ['mevt._set_n', n], ['mevt._send']);}-->
+  <!--function _mz_simple(cmd) {_mzh.push(['_simple',cmd]);}-->
+  <!--function _mz_simple_param(n,k,v) {_mz_dp[n]=_mz_dp[n]||{};_mz_dp[n][k]=v;}-->
+  <!--function _mz_timer_start(n,u) {_mzt.push(n);if(u)_mzh.push([n+'._urlpre',u]);_mz_simple(n+'._timer_start');}-->
+  <!--function _mz_timer_start_x(n,u) {for(i=0;i<=_mzt.length;i++)_mz_timer_stop(_mzt[i]); _mzt=[];_mzt.push(n);_mz_timer_start(n,u);}-->
+  <!--function _mz_timer_stop(n) {_mz_simple(n+'._timer_stop');}-->
+  <!--_mz_simple_param(0,'timer_start',[10,30*60,0,'v','st:$1,si:$2,']);-->
+
+    <!--function _mz_custom_evt(ae,n,cObj) {-->
+    <!--_mzh.push(['evt._set_ae', ae], ['evt._set_n', n]);-->
+    <!--if(cObj instanceof Object){-->
+        <!--for(var key in cObj)-->
+            <!--_mzh.push(['evt._set_cm'+key,  encodeURIComponent(cObj[key])]);-->
+    <!--}-->
+    <!--_mzh.push(['evt._send']);-->
+  <!--}-->
+<!--//Miaozhen Base Code End-->
+<!--//]]>-->
+<!--</script>-->
+    <!--<script src="http://static.veryweibo.com/js/weixin/jsticketapi-2.0.0.min.js"></script>-->
+
+    <script>
+    function setWeixin() {
+            jsApiList = ['onMenuShareTimeline', 'onMenuShareAppMessage'];
+            share_timeline_data = {
+                'title': '一颗榴莲，又让我玩起了红白机',
+                'link': 'http://c7.pizzahut.com.cn/flight',
+                // 'link': 'http://www.baidu.com',
+                'img_url':'http://c7.pizzahut.com.cn/flight/img/weixin_logo.jpg',
+                'imgUrl':'http://c7.pizzahut.com.cn/flight/img/weixin_logo.jpg',
+                'callbackfunc': function () {
+
+                }
+            };
+            share_app_data = {
+                'title':'START',
+                'desc':'一颗榴莲，又让我玩起了红白机',
+                'link': 'http://c7.pizzahut.com.cn/flight',
+                'img_url':'http://c7.pizzahut.com.cn/flight/img/weixin_logo.jpg',
+                'imgUrl':'http://c7.pizzahut.com.cn/flight/img/weixin_logo.jpg',
+                'callbackfunc':function() {
+
+                }
+            };
+            var curUrl = window.location.href;
+            if (curUrl.indexOf('#') > 0) {
+                curUrl = curUrl.substring(0, curUrl.indexOf('#')+1);
+            }
+            construct('wx6173eb6085accfec', null, curUrl, jsApiList, share_timeline_data, share_app_data);
+        }
+
+    </script>
+</head>
+<body>
+
+    <div class="page loading-page">
+        <img src="./img/load_bg.png" class="common-bg">
+        <div class="progress-bar-wrap pa">
+            <div class="progress-bar pa">
+                <img class='pa' src="./img/progress-bar.png" alt="">
+            </div>
+        </div>
+        <img class="pa load-plane" src="./img/load-plane.png">
+        <div class="percent pa">
+            0%
+        </div>
+    </div>
+    <div class="page mashangkaida-page">
+        <img src="./img/mashangkaida-bg.png" class="common-bg">
+        <img src="./img/mashangkaida-bottom.png" class="mashangkaida-bottom">
+        <div class="mashangkaida-btn pa">
+
+        </div>
+        <div class="law-btn pa">
+
+        </div>
+
+    </div>
+    <div class="page pre-game-page">
+        <img src="./img/pre-game-bg.png" class="fit-bg">
+        <img src="./img/pre-game-mask.png" class="common-bg pre-game-mask">
+    </div>
+    <div class="page game-page">
+        <canvas id="plane-game"></canvas>
+    </div>
+
+    <div class="page win-page">
+        <img class="common-bg" src="./img/win_bg.png" alt="">
+
+        <img id="type-free" class="win-food" src="./img/free.png">
+        <img id="type-10" class="win-food" src="./img/10.png">
+        <img id="type-49" class="win-food" src="./img/49.png">
+        <div class="activity-rule-btn win-btn"></div>
+        <div class="click-get-btn win-btn"></div>
+
+    </div>
+
+    <div class="page lose-page">
+        <img class="common-bg" src="./img/lose_bg.png" alt="">
+        <div class="activity-rule-btn lose-btn"></div>
+
+    </div>
+    <div class="page yijinglingguo-page">
+        <img class="common-bg" src="./img/yijinglingguo-bg.png" alt="">
+        <div class="activity-rule-btn yijinglingguo-btn pa"></div>
+    </div>
+    <div class="page rule-page">
+        <div class="close-rule-btn pa"></div>
+        <img class='rule-bg long-bg' src="./img/rule-bg.png">
+    </div>
+
+    <script src="js/create.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/ndgmr.Collision.js"></script>
+    <script src="js/extend.js"></script>
+    <script src="js/index.js"></script>
+
+        <script>
+            $(function () {
+
+                var from = '';
+                var resize = function () {
+                    $('.page').css({
+                        width: window.innerWidth,
+                        height: window.innerHeight
+                    });
+
+                    $('.win-food').css({
+                        top: 241 * window.innerWidth / 649
+                    });
+
+                    $('.win-btn').css({
+                        width: 185 * window.innerWidth / 649,
+                        height: 63 * window.innerWidth / 649,
+                        top: 950 * window.innerWidth / 649
+                    });
+                    $('.activity-rule-btn.win-btn').css({
+                        left: 77 * window.innerWidth / 649
+                    });
+                    $('.click-get-btn').css({
+                        right: 77 * window.innerWidth / 649
+                    });
+                    $('.activity-rule-btn.lose-btn').css({
+                        width: 162 * window.innerWidth / 649,
+                        height: 55 * window.innerWidth / 649,
+                        top: 938 * window.innerWidth / 649,
+                        left: 250 * window.innerWidth / 649
+                    });
+                    $('.activity-rule-btn.yijinglingguo-btn').css({
+                        width: 162 * window.innerWidth / 649,
+                        height: 55 * window.innerWidth / 649,
+                        top: 1043 * window.innerWidth / 649,
+                        left: 250 * window.innerWidth / 649
+                    });
+
+
+                    $('.progress-bar-wrap').css({
+                        top: 528 * window.innerWidth / 649,
+                        left: 126 * window.innerWidth / 649,
+                        width: 400 * window.innerWidth / 649,
+                        height: 48 * window.innerWidth / 649
+                    });
+                     $('.progress-bar').css({
+                        height: 48 * window.innerWidth / 649
+                    });
+                    $('.progress-bar-wrap img').css({
+                        width: 400 * window.innerWidth / 649,
+                        height: 48 * window.innerWidth / 649
+                    });
+                    $('.load-plane').css({
+                        top: 488 * window.innerWidth / 649,
+                        left: 114 * window.innerWidth / 649,
+                        width: 109 * window.innerWidth / 649,
+                        height: 120 * window.innerWidth / 649
+                    });
+                    $('.percent').css({
+                        top: 531 * window.innerWidth / 649
+                    });
+
+                    $('.mashangkaida-btn').css({
+                        bottom: 95 * window.innerWidth / 649,
+                        left: 188 * window.innerWidth / 649,
+                        width: 267 * window.innerWidth / 649,
+                        height: 93 * window.innerWidth / 649
+                    });
+
+                    $('.law-btn').css({
+                        bottom: 25 * window.innerWidth / 649,
+                        left: 273 * window.innerWidth / 649,
+                        width: 100 * window.innerWidth / 649,
+                        height: 39 * window.innerWidth / 649
+                    });
+                    $('.close-rule-btn').css({
+                        top: 23 * window.innerWidth / 649,
+                        right: 25 * window.innerWidth / 649,
+                        width: 66 * window.innerWidth / 649,
+                        height: 66 * window.innerWidth / 649
+                    });
+
+                };
+                var getParameterByName = function (name, url) {
+                    if (!url) url = window.location.href;
+                    name = name.replace(/[\[\]]/g, "\\$&");
+                    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                        results = regex.exec(url);
+                    if (!results) return null;
+                    if (!results[2]) return '';
+                    return decodeURIComponent(results[2].replace(/\+/g, " "));
+                }
+                var bindEvents = function () {
+                    $('.mashangkaida-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.pre-game-page').show();
+//                        _mz_evt('1001264', '100031906');
+//                        _mz_evt('1001264', '100031907');
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','马上开打');
+                        }
+//                        _mz_timer_start(1, 'http://msg.cn.miaozhen.com/e?ae=1001264&n=100031908&rt=2');
+                    });
+                    $('.pre-game-page').on('click', function () {
+
+                        $('.page').hide();
+                        $('.game-page').show();
+                        gameManager.startGame();
+                    });
+                    $('.close-rule-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.' + from).show();
+                    });
+                    $('.law-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.rule-page').show();
+                        from = 'mashangkaida-page';
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','活动规则');
+                        }
+                    });
+                    $('.activity-rule-btn.win-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.rule-page').show();
+
+                        if (window.hasShowType == '49') {
+//                            _mz_evt('1001264', '100031910');
+                        } else if (window.hasShowType == '10') {
+//                            _mz_evt('1001264', '100031912');
+                        } else if (window.hasShowType == 'free') {
+//                            _mz_evt('1001264', '100031914');
+                        }
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','活动规则');
+                        }
+
+                        from = 'win-page';
+                    });
+                    $('.activity-rule-btn.lose-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.rule-page').show();
+                        from = 'lose-page';
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','活动规则');
+                        }
+                    });
+                    $('.activity-rule-btn.yijinglingguo-btn').on('click', function () {
+                        $('.page').hide();
+                        $('.rule-page').show();
+                        from = 'yijinglingguo-page';
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','活动规则');
+                        }
+                    });
+                    $('.click-get-btn').on('click', function () {
+                        var map = {
+                            '10': 'mfll003',
+                            'free': 'mfll001',
+                            '49': 'mfll002'
+                        };
+                        var couponType = map[window.hasShowType];
+                        if (window._tag) {
+                            _tag.dcsMultiTrack('wt.event','领取优惠');
+                        }
+                        if (window.hasShowType == '10') {
+                            if (window._tag) {
+                                _tag.dcsMultiTrack('wt.event','中奖领取10元券');
+                            }
+                        } else if(window.hasShowType == '49') {
+                            if (window._tag) {
+                                _tag.dcsMultiTrack('wt.event','中奖领取49元券');
+                            }
+                        } else if (window.hasShowType == 'free') {
+                            if (window._tag) {
+                                _tag.dcsMultiTrack('wt.event','中奖领取免费券');
+                            }
+                        }
+                        var url = "http://c7.pizzahut.com.cn/flight/draw.php?\
+                            id=" + window.wid + "&\
+                            type="+ window.hasShowType + "&\
+                            channel=" + window.channel + "&\
+                            couponType=" + couponType;
+                        // alert(url);
+                        window.location.href = url;
+                    });
+
+                }
+
+                resize();
+                bindEvents();
+//                setWeixin();
+
+
+                var type = getParameterByName('type');
+                var channel = getParameterByName('channel');
+
+                if ((type == '10' || type == '49' || type == 'free') && channel == 'tv') {
+                    // checkType(type, 'tv');
+                    // 打飞机
+                    $('.rule-bg').attr('src', './img/rule-bg-tv.png');
+                } else if (type == 'lose') {
+                    // showType('lose');
+                } else {
+                    // 正常显示
+                    window.channel = 'h5';
+                    gameManager.init.call(gameManager);
+                    $('.page').hide();
+                    $('.page').eq(0).show();
+
+//                    _mz_evt('1001264', '100031904');
+                }
+
+
+            })
+        </script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5f367ceb2673c08b76d343bc1465684f";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

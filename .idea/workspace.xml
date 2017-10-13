@@ -26,8 +26,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1670" />
-    <option name="y" value="-110" />
+    <option name="x" value="-1530" />
+    <option name="y" value="-263" />
     <option name="width" value="1250" />
     <option name="height" value="777" />
   </component>
@@ -82,6 +82,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="382f1148-e6cc-4eb1-a9d2-130471d63fb7" name="Default" comment="" />
@@ -89,15 +92,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505233396676</updated>
-      <workItem from="1505233399188" duration="37000" />
+      <workItem from="1505233399188" duration="250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37000" />
+    <option name="totallyTimeSpent" value="250000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1670" y="-110" width="1250" height="777" extended-state="0" />
+    <frame x="-1530" y="-263" width="1250" height="777" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24979658" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
